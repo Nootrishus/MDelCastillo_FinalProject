@@ -1,0 +1,104 @@
+1.) Problem Statement: 
+
+Create a program that allows the user to input the total amount of their bill, rate the service provided to them,
+decide how many people to split the bill between, and calculate the amount of the tip. The output will show how much
+the tip should be.
+
+
+2.) Nouns & Verbs:
+Nouns-
+user, total, bill, service, people, amount, tip
+
+Verbs -
+input, rate, decide, split, calculate
+
+
+3.) Defining Diagram:
+
+INPUTS
+  total
+  service
+  how many people
+
+PROCESSING
+  User input for totalBill
+  user input for service percentage
+  user input for amount of people 
+  check to see if there are any blank entries
+  calculate tip 
+  output tip amount dependent on how many people
+
+OUTPUTS 
+  tip amount dependent on how many people
+  
+
+
+4.) Solution Algorithm
+TipCalculator
+  get calculateBtn
+  get totalBill
+  get srvcPerc
+  get numofPeeps
+  get result
+  IF totalBill has content THEN
+    underline in a color
+  ELSE underline in a different color
+  IF srvcPerc has content THEN
+    underline in a color
+  ELSE underline in a different color
+  if no error then
+  set tip to 0
+  assign tipCalc to totalBill.value * srvcPerc.value
+  IF numofPeeps.value is not equal to 1 and not equal to "" THEN
+    set tipPerPers to tipCalc / numofPeeps.value
+    set tipPerPersRounded to round the tipPerPers * 100 / 100
+    set the decimal point to show only 2 digits
+    set tip to Rounded to display messages 
+  ELSE
+    set tipRounded to round tipCalc * 100 / 100
+    set the decimal point to show only 2 digits
+    set tip to display single amount 
+  display result
+  addEventListener for calculateBtn on click then calculate
+END
+
+
+
+5.) Tests:
+Variables
+  totalBill, srvcPerc, numofPeeps, result, error, tip, tipCalc, tipPerPers, tipPerPersRounded, tipRounded
+
+TEST CASE 1:
+
+  INPUT VALUES: 789, 30%, 3 
+
+  EXPECTED RESULT:  78.90 Per Person
+  
+  ACTUAL RESULT: 78.90 Per Person
+  
+TEST CASE 2:
+
+  INPUT VALUES: 60.89, 10%, 1
+
+  EXPECTED RESULT: 6.09
+  
+  ACTUAL RESULT: 6.09
+   
+  
+TEST CASE 3:
+
+  INPUT VALUES: hi, 5%, 1
+
+  EXPECTED RESULT: error color change
+  
+  ACTUAL RESULT: error color change
+   
+  
+TEST CASE 4:
+
+  INPUT VALUES: 456, "Select an option", 7
+
+  EXPECTED RESULT: error color change
+  
+  ACTUAL RESULT: error color change
+ 
